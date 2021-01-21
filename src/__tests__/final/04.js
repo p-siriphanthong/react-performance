@@ -2,9 +2,8 @@ import * as React from 'react'
 import {alfredTip} from '@kentcdodds/react-workshop-app/test-utils'
 import {render, waitFor, screen} from '@testing-library/react'
 import {build, fake, sequence} from '@jackfranklin/test-data-bot'
-import {getItems} from '../workerized-filter-cities'
-import App from '../final/04'
-// import App from '../exercise/04'
+import {getItems} from '../../workerized-filter-cities'
+import App from '../../final/04'
 
 const buildItem = build({
   fields: {
@@ -13,7 +12,7 @@ const buildItem = build({
   },
 })
 
-jest.mock('../workerized-filter-cities', () => ({
+jest.mock('../../workerized-filter-cities', () => ({
   getItems: jest.fn(() => {
     throw new Error('getItems must be mocked')
   }),

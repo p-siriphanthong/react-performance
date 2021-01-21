@@ -1,14 +1,13 @@
 import * as React from 'react'
 import {alfredTip} from '@kentcdodds/react-workshop-app/test-utils'
 import {render, screen, fireEvent} from '@testing-library/react'
-import {getItems} from '../filter-cities'
-import App from '../final/02'
-// import App from '../exercise/02'
+import {getItems} from '../../filter-cities'
+import App from '../../final/02'
 
-jest.mock('../filter-cities')
+jest.mock('../../filter-cities')
 
 beforeEach(() => {
-  const filterCities = jest.requireActual('../filter-cities')
+  const filterCities = jest.requireActual('../../filter-cities')
   getItems.mockImplementation((...args) => {
     return filterCities.getItems(...args)
   })
