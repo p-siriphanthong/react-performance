@@ -10,6 +10,7 @@ function lazyWithPreload(factory) {
   return Component
 }
 
+// 💬 or `const loadGlobe = () => import('../globe')`, then `const Globe = React.lazy(loadGlobe)`
 const Globe = lazyWithPreload(() => import('../globe'))
 
 function App() {
